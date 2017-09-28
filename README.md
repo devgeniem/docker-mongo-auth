@@ -1,8 +1,12 @@
 # docker-mongo-auth
 A Docker Image for MongoDB which makes it easy to create an Admin, a Database and a Database User when the container is first launched.
 
+# Changes
+- mongo port
+
+
 # Customization
-There are a number of environment variables which you can specify to customize the username and passwords of your users. 
+There are a number of environment variables which you can specify to customize the username and passwords of your users.
 
 - With Dockerfile
   ```
@@ -12,19 +16,20 @@ There are a number of environment variables which you can specify to customize t
 
   # ENV MONGODB_ADMIN_USER root
   # ENV MONGODB_ADMIN_PASS password
-
+  # ENV MONGODB_PORT port
   # ENV MONGODB_APPLICATION_DATABASE your_db
   # ENV MONGODB_APPLICATION_USER user
   # ENV MONGODB_APPLICATION_PASS password
   ```
-  
+
 - With docker-compose.yml
   ```
   services:
     db:
-      image: aashreys/mongo-auth:latest
+      image: xxxxxxx:latest
       environment:
         - AUTH=yes
+        - MONGODB_PORT=12700
         - MONGODB_ADMIN_USER=admin
         - MONGODB_ADMIN_PASS=admin123
         - MONGODB_APPLICATION_DATABASE=sample
@@ -46,5 +51,3 @@ There are a number of environment variables which you can specify to customize t
     -e MONGODB_APPLICATION_PASS=testpass \
     -p 27017:27017 aashreys/mongo-auth:latest
   ```
-
-Find the image on Docker Cloud @ https://cloud.docker.com/swarm/aashreys/repository/docker/aashreys/mongo-auth
