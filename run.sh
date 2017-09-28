@@ -4,9 +4,15 @@ set -m
 mongodb_cmd="mongod"
 cmd="$mongodb_cmd"
 
+if [ "$MONGODB_PORT" ]; then
+  cmd="$cmd --port $MONGODB_PORT"
+fi
+
 if [ "$AUTH" == "yes" ]; then
     cmd="$cmd --auth"
 fi
+
+echo $cmd
 
 $cmd &
 
