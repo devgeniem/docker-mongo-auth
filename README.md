@@ -29,14 +29,14 @@ There are a number of environment variables which you can specify to customize t
       image: xxxxxxx:latest
       environment:
         - AUTH=yes
-        - MONGODB_PORT=12700
+        - MONGODB_PORT=27100
         - MONGODB_ADMIN_USER=admin
         - MONGODB_ADMIN_PASS=admin123
         - MONGODB_APPLICATION_DATABASE=sample
         - MONGODB_APPLICATION_USER=aashrey
         - MONGODB_APPLICATION_PASS=admin123
       ports:
-        - "27017:27017"
+        - "27100:27100"
   // more configuration
   ```
 
