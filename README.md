@@ -49,5 +49,6 @@ There are a number of environment variables which you can specify to customize t
     -e MONGODB_APPLICATION_DATABASE=mytestdatabase \
     -e MONGODB_APPLICATION_USER=testuser \
     -e MONGODB_APPLICATION_PASS=testpass \
-    -p 27017:27017 aashreys/mongo-auth:latest
+    -e MONGODB_PORT=27018 \
+    -p 27018:27018 xxxxxx:latest
   ```
